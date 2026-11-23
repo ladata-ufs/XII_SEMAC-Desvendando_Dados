@@ -1,0 +1,548 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 5,
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    },
+    "language_info": {
+      "name": "python",
+      "version": "3.10.0"
+    },
+    "colab": {
+      "provenance": [],
+      "toc_visible": true
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Projeto Final — Introdução à Ciência de Dados\n",
+        "\n",
+        "**Integrantes do grupo (dupla ou trio):**\n",
+        "- Nome 1:\n",
+        "- Nome 2:\n",
+        "- Nome 3 (se houver):\n",
+        "\n",
+        "**Modalidade escolhida:** `[ ] Trilha A — Análise Exploratória de Dados (EDA)` | `[ ] Trilha B — Web Scraping`\n",
+        "\n",
+        "---\n",
+        "\n",
+        "### Como usar este notebook (duração prevista: 2 horas)\n",
+        "1. **Faça uma cópia** no seu Google Drive (`Arquivo > Salvar uma cópia no Drive`) antes de começar.\n",
+        "2. **Escolha APENAS UMA trilha** abaixo:\n",
+        "   - Se escolheu **EDA (Kaggle)** → siga a **Trilha A** (pode ignorar ou apagar a Trilha B).\n",
+        "   - Se escolheu **Web Scraping** → siga a **Trilha B** (pode ignorar ou apagar a Trilha A).\n",
+        "3. Complete os trechos marcados com `# TODO` e preencha os blocos de texto com suas descobertas.\n",
+        "4. **Uso de IA simples:** vocês podem consultar ferramentas de IA para tirar dúvidas de sintaxe, corrigir erros ou melhorar gráficos, mas **testem tudo nos dados reais** e garantam que o grupo sabe explicar o que o código faz.\n",
+        "\n",
+        "> **Sugestão de divisão das 2 horas:** `15 min` escolha do tema + setup • `20 min` carga/coleta e limpeza • `50 min` análises e gráficos • `20 min` conclusões + GitHub/README • `15 min` ensaio da apresentação (3 min)."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "# TRILHA A — Análise Exploratória de Dados (EDA)\n",
+        "*(Desenvolva esta trilha se o grupo escolheu analisar um dataset do Kaggle.)*\n",
+        "\n",
+        "## A1. Identificação do Dataset e Perguntas Iniciais\n",
+        "Preencha os campos abaixo dando dois cliques nesta célula:\n",
+        "\n",
+        "- **Nome do dataset:**\n",
+        "- **Link do Kaggle:**\n",
+        "- **Por que o grupo escolheu esse tema?**\n",
+        "- **3 perguntas que queremos investigar nos dados:**\n",
+        "  1.\n",
+        "  2.\n",
+        "  3."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## A2. Importação das Bibliotecas\n",
+        "Importe as bibliotecas básicas para manipulação de tabelas e gráficos."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# Bibliotecas principais para EDA\n",
+        "import pandas as pd\n",
+        "import numpy as np\n",
+        "\n",
+        "# TODO: importe matplotlib.pyplot com o apelido plt\n",
+        "\n",
+        "\n",
+        "# TODO: importe seaborn com o apelido sns\n",
+        "\n",
+        "\n",
+        "# Configuração opcional para deixar os gráficos mais legíveis\n",
+        "# sns.set_theme(style=\"whitegrid\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## A3. Carregamento dos Dados\n",
+        "Faça o upload do arquivo `.csv` baixado do Kaggle para o Colab e carregue-o em um DataFrame chamado `df`.\n",
+        "\n",
+        "> **Dica:** prefira datasets com 1 arquivo `.csv` leve (até ~10 MB) para agilizar a prática. Se o arquivo usar `;` como separador ou der erro de acentuação, teste `sep=\";\"` ou `encoding=\"latin1\"` dentro do `pd.read_csv()`."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "from google.colab import files\n",
+        "\n",
+        "# Execute esta célula e selecione o arquivo .csv do seu computador\n",
+        "uploaded = files.upload()\n",
+        "\n",
+        "# Pega automaticamente o nome do arquivo enviado\n",
+        "caminho_arquivo = list(uploaded.keys())[0]\n",
+        "print(\"Arquivo carregado:\", caminho_arquivo)\n",
+        "\n",
+        "# TODO: carregue o CSV em um DataFrame chamado df usando pd.read_csv(...)\n",
+        "df = None\n",
+        "\n",
+        "# TODO: exiba as 5 primeiras linhas de df"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## A4. Inspeção Inicial do DataFrame\n",
+        "Descubra o tamanho da tabela, os nomes das colunas, os tipos de dados e um resumo estatístico rápido."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# TODO: exiba o formato do dataset (linhas, colunas) com .shape\n",
+        "\n",
+        "\n",
+        "# TODO: exiba a lista de colunas com .columns\n",
+        "\n",
+        "\n",
+        "# TODO: use .info() para ver os tipos de dados e contagem de não-nulos"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# TODO: use .describe() para observar médias, mínimos, máximos e quartis das colunas numéricas"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## A5. Valores Ausentes e Possíveis Inconsistências\n",
+        "Verifique se existem valores nulos (`NaN`), linhas duplicadas ou valores estranhos antes de analisar."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# Quantidade de valores nulos por coluna\n",
+        "# TODO: complete o comando abaixo\n",
+        "nulos = df.isna().sum()\n",
+        "print(\"Valores nulos por coluna:\")\n",
+        "print(nulos[nulos > 0])\n",
+        "\n",
+        "# TODO: verifique quantas linhas duplicadas existem usando df.duplicated().sum()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# Espaço para limpeza básica (execute apenas o que fizer sentido para o seu dataset)\n",
+        "# Exemplos de ações comuns:\n",
+        "# - Remover duplicatas: df = df.drop_duplicates()\n",
+        "# - Remover linhas com nulos em colunas essenciais: df = df.dropna(subset=[\"nome_coluna\"])\n",
+        "# - Preencher nulos: df[\"nome_coluna\"] = df[\"nome_coluna\"].fillna(0)\n",
+        "# - Converter tipos ou padronizar textos: df[\"col\"] = df[\"col\"].str.strip()\n",
+        "\n",
+        "# TODO: escreva aqui o tratamento escolhido pelo grupo (ou comente se o dataset já estiver limpo)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "**Registro da qualidade dos dados:** *(escreva em 1–2 linhas o que vocês encontraram de nulos/inconsistências e o que decidiram fazer)*\n",
+        "-"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## A6. Desenvolvimento das Análises (mínimo de 3)\n",
+        "Para cada análise:\n",
+        "1. Escreva a **pergunta** que o grupo quer responder;\n",
+        "2. Faça o **cálculo/agrupamento/filtro** em Python (`value_counts`, `groupby`, `sort_values`, `corr`, etc.);\n",
+        "3. Crie uma **visualização clara** (com título e nomes nos eixos X e Y);\n",
+        "4. Registre o que o resultado mostra.\n",
+        "\n",
+        "---\n",
+        "### Análise 1\n",
+        "**Pergunta 1:** *(ex.: Qual categoria aparece com mais frequência ou tem maior média?)*"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# TODO: faça o cálculo, filtro, contagem ou agrupamento para responder à Pergunta 1\n",
+        "# Dica: você pode usar df[\"coluna\"].value_counts() ou df.groupby(\"cat\")[\"num\"].mean()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# TODO: crie um gráfico para ilustrar a Análise 1 (ex.: barras, histograma ou boxplot)\n",
+        "# Lembre de configurar plt.title(...), plt.xlabel(...), plt.ylabel(...) e finalizar com plt.show()"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "**Interpretação da Análise 1:** *(o que esse resultado responde sobre a sua pergunta?)*\n",
+        "-\n",
+        "\n",
+        "---\n",
+        "### Análise 2\n",
+        "**Pergunta 2:** *(ex.: Como os valores de uma variável numérica estão distribuídos? Existem diferenças entre grupos?)*"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# TODO: faça o cálculo ou comparação para responder à Pergunta 2"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# TODO: crie uma visualização diferente ou complementar para a Análise 2\n",
+        "# Exemplo de estrutura:\n",
+        "# plt.figure(figsize=(8, 4))\n",
+        "# ...\n",
+        "# plt.title(\"...\")\n",
+        "# plt.show()"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "**Interpretação da Análise 2:**\n",
+        "-\n",
+        "\n",
+        "---\n",
+        "### Análise 3\n",
+        "**Pergunta 3:** *(ex.: Existe relação/correlação entre duas ou mais variáveis numéricas?)*"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# TODO: investigue uma relação entre variáveis\n",
+        "# Dica: experimente df.corr(numeric_only=True) ou compare duas colunas numéricas"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# TODO: crie a visualização da Análise 3 (ex.: scatter plot com plt.scatter ou heatmap com sns.heatmap)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "**Interpretação da Análise 3:**\n",
+        "-"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## A7. Principais Descobertas e Conclusões (Trilha A)\n",
+        "Resuma em 2 a 4 tópicos o que o grupo aprendeu com o dataset (esse texto vai ajudar na apresentação de 3 minutos e no `README.md`):\n",
+        "\n",
+        "- **Descoberta 1:**\n",
+        "- **Descoberta 2:**\n",
+        "- **Limitação ou cuidado percebido nos dados:**"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "# TRILHA B — Web Scraping\n",
+        "*(Desenvolva esta trilha se o grupo escolheu coletar e organizar dados de uma página pública.)*\n",
+        "\n",
+        "## B1. Ideia Escolhida e Página de Origem\n",
+        "Preencha os campos abaixo dando dois cliques nesta célula:\n",
+        "\n",
+        "- **Ideia escolhida:** *(baseada no artigo da DataCamp ou página pública equivalente)*\n",
+        "- **URL da página pública:**\n",
+        "- **Quais informações o grupo vai extrair?** *(ex.: título, preço, categoria, nota, autor...)*\n",
+        "- **Checklist de boas práticas:**\n",
+        "  - `[ ]` A página é pública e não exige login nem CAPTCHA.\n",
+        "  - `[ ]` Vamos fazer poucas requisições (sem sobrecarregar o site) e respeitar os termos de uso."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## B2. Importação das Bibliotecas\n",
+        "Usaremos `requests` para buscar o HTML da página, `BeautifulSoup` para ler os elementos e `pandas` + `matplotlib` para organizar e visualizar os dados."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "import requests\n",
+        "from bs4 import BeautifulSoup\n",
+        "import pandas as pd\n",
+        "\n",
+        "# TODO: importe matplotlib.pyplot com o apelido plt (para visualizar seus dados coletados)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## B3. Requisição HTTP Inicial\n",
+        "Envie uma requisição `GET` para a URL escolhida e verifique se a resposta retornou status `200` (sucesso).\n",
+        "\n",
+        "> **Dica:** se o status for `403`, `429` ou se o HTML vier sem os dados (site carregado por JavaScript), troque rapidamente para uma página estática pública para não perder tempo nas 2 horas."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# TODO: substitua pela URL pública escolhida pelo grupo\n",
+        "url = \"https://exemplo.com\"\n",
+        "\n",
+        "# Cabeçalho simples identificando o navegador/requisição\n",
+        "headers = {\n",
+        "    \"User-Agent\": \"Mozilla/5.0 (Projeto Educacional Introducao Ciencia de Dados)\"\n",
+        "}\n",
+        "\n",
+        "# Fazendo a requisição (timeout evita que o código fique travado)\n",
+        "resposta = requests.get(url, headers=headers, timeout=15)\n",
+        "\n",
+        "# TODO: verifique o código de status (200 = OK)\n",
+        "print(\"Status HTTP:\", resposta.status_code)\n",
+        "\n",
+        "# Cria o objeto BeautifulSoup para navegar no HTML\n",
+        "soup = BeautifulSoup(resposta.text, \"html.parser\")\n",
+        "\n",
+        "# Teste rápido: imprime o título da página (<title>)\n",
+        "print(\"Título da página:\", soup.title.text.strip() if soup.title else \"Não encontrado\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## B4. Extração e Organização das Informações\n",
+        "Use a ferramenta **Inspecionar** (`Ctrl + Shift + I` ou botão direito > *Inspecionar*) no navegador para descobrir quais tags e classes HTML guardam os dados desejados (ex.: `article`, `div`, `h2`, `span`, `tr`).\n",
+        "\n",
+        "Complete a estrutura abaixo para coletar cada item em uma lista de dicionários."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# Passo 1: encontre todos os blocos principais que se repetem na página\n",
+        "# TODO: substitua \"TAG\" e \"CLASSE\" pelos elementos encontrados no Inspecionar\n",
+        "blocos = soup.find_all(\"TAG\", class_=\"CLASSE\")\n",
+        "print(\"Quantidade de blocos encontrados:\", len(blocos))\n",
+        "\n",
+        "# Passo 2: percorra cada bloco e extraia os campos desejados\n",
+        "dados_coletados = []\n",
+        "\n",
+        "for bloco in blocos:\n",
+        "    # TODO: ajuste as buscas abaixo para extrair as informações do seu site\n",
+        "    # Dica: use .get_text(strip=True) para pegar o texto limpo\n",
+        "    # campo_1 = bloco.find(\"...\").get_text(strip=True)\n",
+        "    # campo_2 = ...\n",
+        "\n",
+        "    item = {\n",
+        "        # \"coluna_1\": campo_1,\n",
+        "        # \"coluna_2\": campo_2,\n",
+        "    }\n",
+        "    dados_coletados.append(item)\n",
+        "\n",
+        "# Confira os primeiros itens extraídos\n",
+        "print(\"Total coletado:\", len(dados_coletados))\n",
+        "dados_coletados[:3]"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## B5. Conversão em DataFrame e Limpeza Básica\n",
+        "Transforme a lista `dados_coletados` em um DataFrame do `pandas` e ajuste textos ou números (ex.: remover `\"R$\"`, `\"£\"`, espaços extras ou converter preços para `float`)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# TODO: converta dados_coletados em um DataFrame chamado df_scraping\n",
+        "df_scraping = pd.DataFrame(dados_coletados)\n",
+        "\n",
+        "# TODO: exiba o formato (.shape), as primeiras linhas (.head()) e os tipos (.info())"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# TODO (se necessário): faça a limpeza das colunas\n",
+        "# Exemplo: remover símbolo de moeda e converter texto para número decimal\n",
+        "# df_scraping[\"preco\"] = (\n",
+        "#     df_scraping[\"preco\"]\n",
+        "#     .str.replace(\"R$\", \"\", regex=False)\n",
+        "#     .str.replace(\",\", \".\", regex=False)\n",
+        "#     .astype(float)\n",
+        "# )"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## B6. Análise Rápida e Visualização dos Dados Coletados\n",
+        "Mostre um resultado interessante a partir dos dados que vocês coletaram (ex.: contagem por categoria, top 5 itens, média ou gráfico simples)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# TODO: calcule pelo menos 1 estatística ou resumo dos dados coletados\n",
+        "# Exemplos: value_counts(), describe(), sort_values() ou groupby()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# TODO: crie pelo menos 1 gráfico simples para apresentar na demonstração de 3 minutos\n",
+        "# Lembre de colocar título e nomes nos eixos, finalizando com plt.show()"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## B7. Exportação dos Resultados\n",
+        "Salve os dados organizados em `.csv` para incluir na pasta `dados/` do repositório no GitHub."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# Nome do arquivo de saída\n",
+        "nome_saida = \"dados_coletados.csv\"\n",
+        "\n",
+        "# TODO: salve df_scraping em CSV usando .to_csv(nome_saida, index=False, encoding=\"utf-8-sig\")\n",
+        "\n",
+        "\n",
+        "print(f\"Arquivo '{nome_saida}' gerado com sucesso!\")\n",
+        "\n",
+        "# Opcional: descomente as duas linhas abaixo para baixar o CSV direto para o seu computador\n",
+        "# from google.colab import files\n",
+        "# files.download(nome_saida)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## B8. Principais Descobertas e Conclusões (Trilha B)\n",
+        "Resuma em 2 a 4 tópicos o que o grupo coletou e descobriu (use este resumo na apresentação de 3 minutos e no `README.md`):\n",
+        "\n",
+        "- **O que conseguimos coletar e organizar:**\n",
+        "- **Principal resultado ou padrão observado nos dados:**\n",
+        "- **Maior desafio técnico no HTML (e como resolveram):**"
+      ]
+    }
+  ]
+}
