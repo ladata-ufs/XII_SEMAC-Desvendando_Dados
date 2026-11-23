@@ -1,25 +1,26 @@
 # XII_SEMAC-Desvendando_Dados# Projeto Final — Introdução à Ciência de Dados
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dudxyz/XII_SEMAC-Desvendando_Dados/blob/main/notebooks/projeto_final_ciencia_de_dados.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ladata-ufs/XII_SEMAC-Desvendando_Dados/blob/main/notebooks/projeto_final_ciencia_de_dados.ipynb)
+
 Descoberta
 > **Para o grupo:** substitua os trechos entre colchetes `[...]` pelas informações do seu projeto. Você pode editar este arquivo diretamente no GitHub clicando no ícone de lápis (**Edit this file**) no canto superior direito.
 
 ---
 
-## 👥 Integrantes (Dupla ou Trio)
+## Integrantes (Dupla ou Trio)
 
 - [Nome completo 1]
 - [Nome completo 2]
 - [Nome completo 3 — opcional]
 
-## 🎯 Modalidade Escolhida
+## Modalidade Escolhida
 
 Marque com `x` apenas a trilha desenvolvida pelo grupo:
 
 - [ ] **Opção 1 — Análise Exploratória de Dados (EDA)**
 - [ ] **Opção 2 — Web Scraping**
 
-## 💡 Sobre o Projeto
+## Sobre o Projeto
 
 - **Objetivo / Ideia principal:** [Explique em 2 ou 3 frases o que o grupo decidiu investigar ou coletar.]
 - **Fonte dos dados:** [Nome e link do dataset no Kaggle **OU** URL da página pública utilizada no Web Scraping.]
