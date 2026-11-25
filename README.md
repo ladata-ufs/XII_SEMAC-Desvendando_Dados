@@ -1,4 +1,6 @@
-# XII_SEMAC-Desvendando_Dados# Projeto Final — Introdução à Ciência de Dados
+# XII_SEMAC-Desvendando_Dados
+
+# Projeto Final — Introdução à Ciência de Dados
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ladata-ufs/XII_SEMAC-Desvendando_Dados/blob/main/notebooks/projeto_final_ciencia_de_dados.ipynb)
 
